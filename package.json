@@ -4,6 +4,8 @@
   "description": "RwandaSoft Ltd official site",
   "main": "index.js",
   "scripts": {
+    "build": "npm run build-js",
+    "build-js": "rollup -c && babel static/scripts/main.js --out-file static/scripts/main.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/rwandasoft/rs-site/issues"
   },
-  "homepage": "https://github.com/rwandasoft/rs-site#readme"
+  "homepage": "https://github.com/rwandasoft/rs-site#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-preset-babili": "^0.1.4",
+    "rollup": "^0.43.0",
+    "rollup-plugin-cleanup": "^1.0.1"
+  }
 }
