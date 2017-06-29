@@ -1,0 +1,19 @@
+{
+  "name": "RwandaSoft Ltd official site",
+  "short_name": "RS",
+  "icons": [{
+    "src": "/rs/static/images/icons/rs-icon@192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+    "src": "/rs/static/images/icons/rs-icon@512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "start_url": "/rs/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAFAFA",
+  "theme_color": "#6387F5"
+}

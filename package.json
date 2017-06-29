@@ -1,0 +1,21 @@
+{
+  "name": "rwandasoft",
+  "version": "1.0.0",
+  "description": "RwandaSoft Ltd official site",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rwandasoft/rs-site.git"
+  },
+  "keywords": [
+    "Soft"
+  ],
+  "author": "BAHATI Justin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rwandasoft/rs-site/issues"
+  },
+  "homepage": "https://github.com/rwandasoft/rs-site#readme"
+}
