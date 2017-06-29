@@ -1,0 +1,34 @@
+application: rwandasoft-official-site
+version: v20170629
+
+runtime: python27
+api_version: 1
+threadsafe: true
+skip_files:
+- (^node_modules/.*)
+- (^.git/.*)
+
+handlers:
+
+- url: /rs/static/js/(.*)
+  static_files: static/js/\1
+  expiration: "1d"
+  upload: static/js/(.*)
+  secure: always
+
+- url: /rs/static/images/(.*)
+  static_files: static/images/\1
+  expiration: "1d"
+  upload: static/images/(.*)
+  secure: always
+
+- url: /(.*)
+  script: main.app
+  secure: always
+
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

@@ -4,8 +4,11 @@
   "description": "RwandaSoft Ltd official site",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build-js",
-    "build-js": "rollup -c && babel static/scripts/main.js --out-file static/scripts/main.js"
+    "build": "npm run build-js && npm run build-css",
+    "build-js": "rollup -c && babel static/scripts/main.js --out-file static/scripts/main.js",
+    "make-css-folder": "mkdirp static/styles",
+    "build-css": "npm run make-css-folder && node-sass sass/ -o static/styles && npm run clean-css",
+    "clean-css": "node ./build/clean-css.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +27,12 @@
     "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
     "babel-preset-babili": "^0.1.4",
+    "clean-css": "^4.1.5",
+    "eslint": "^4.1.1",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.5.3",
     "rollup": "^0.43.0",
-    "rollup-plugin-cleanup": "^1.0.1"
+    "rollup-plugin-cleanup": "^1.0.1",
+    "rollup-plugin-eslint": "^3.0.0"
   }
 }

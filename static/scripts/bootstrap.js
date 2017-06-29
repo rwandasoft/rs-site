@@ -27,7 +27,7 @@ function installServiceWorker () {
   };
 
 
-  navigator.serviceWorker.register('/rs/sw.js').then(function (registration) {
+  navigator.serviceWorker.register('/sw.js').then(function (registration) {
     if (registration.active) {
       registration.active.postMessage('version');
     }
