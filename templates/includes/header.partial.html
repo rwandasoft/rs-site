@@ -1,0 +1,26 @@
+<header class="header">
+
+  <div class="header__content">
+
+    <div class="logo">
+      <a href="/rs/" class="logo__icon" title="Go to home page"></a>
+    </div>
+
+    <div class="menu">
+      <input id="menu__toggle" type="checkbox" class="menu__toggle" />
+      <label class="menu__toggle-label" for="menu__toggle" aria-label="Toggle Menu"></label>
+      <div class="menu__underlay" role="presentation"></div>
+
+      <nav class="menu__nav">
+        <ul class="menu__nav-item-container">
+          <li class="menu__nav-item{% if section == 'home' %} menu__nav-item--active{% endif %}"><a href="/rs/home">Home</a></li>
+          <li class="menu__nav-item{% if section == 'products' %} menu__nav-item--active{% endif %}"><a href="/rs/products">Services</a></li>
+          <li class="menu__nav-item{% if section == 'about us' %} menu__nav-item--active{% endif %}"><a href="/rs/about">About us</a></li>
+          <li class="menu__nav-item{% if section == 'about us' %} menu__nav-item--active{% endif %}"><a href="/rs/about">Portfolio</a></li>
+          <li class="menu__nav-item{% if section == 'contact us' %} menu__nav-item--active{% endif %}"><a href="/rs/contats">Contacts us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</header>

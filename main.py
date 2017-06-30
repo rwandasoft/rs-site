@@ -7,6 +7,7 @@ import hashlib
 import filters
 
 _SERVICE_WORKER_PATH = 'static/scripts/sw.js'
+_BASE_URL = 'https://rwandasoft.com'
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -33,7 +34,7 @@ class MainPage(webapp2.RequestHandler):
             if re.search(r"/$", url):
                 url = url + "index"
             if template is None:
-                template_info['path']="templates/home.html"
+                template_info['path']="templates/base.html"
                 print "Template is None"
 
             template_info["cache"] = "private, no-cache"
@@ -46,10 +47,14 @@ class MainPage(webapp2.RequestHandler):
 
         template_info["mimetype"] = mimetypes.guess_type(template_info["path"])
 
-        return template_info;
+        return template_info
     def get(self, url):
+        ''' All requests goes through this :) '''
 
-        template_info= self.get_template(url)
+        template_info = self.get_template(url)
+        is_partial = self.request.get('partial', None) is not None
+        sessions = None
+
 
         content_type = "text/plain"
         response = {
@@ -65,11 +70,15 @@ class MainPage(webapp2.RequestHandler):
             print template_info["path"]
             response["code"] = 200
             response["content"] = template.render(
-                url=url
+                is_partial=is_partial,
+                url=url,
+                sessions=sessions,
+                base_url=_BASE_URL,
+                inline_styles=True
             )
         except jinja2.TemplateNotFound as template_name:
             print ("Template not found: %s (requested by %s)" %
-                  (str(template_name), template_info["path"]))
+                   (str(template_name), template_info["path"]))
 
         # Make an ETag for the content
         etag = hashlib.sha256()

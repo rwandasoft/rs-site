@@ -1,0 +1,14 @@
+<script>
+    (function() {
+
+      function addBootstrap () {
+        var bootstrap = document.createElement('script');
+        bootstrap.src = "{{ 'static/scripts/main.js' | add_hash }}";
+        document.head.appendChild(bootstrap);
+      }
+
+      addBootstrap();
+    })();
+  </script>
+    </body>
+</html>

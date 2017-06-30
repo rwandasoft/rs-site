@@ -1,0 +1,76 @@
+.header 
+  background: #333
+
+
+.header, .header__content
+  background: url( '/rs/static/images/header/header.svg' ) top center
+  background-size: 100% 100%
+
+.menu__underlay 
+  background: #333
+  opacity: 0
+  pointer-events: none
+
+
+.animatable .menu__underlay 
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.31, 1)
+
+
+.menu__toggle-label 
+  background: url(/rs/static/images/icons/ic_menu_black_24px.svg) center center no-repeat
+
+
+.menu__toggle:checked ~ .menu__underlay 
+  opacity: 0.7
+  pointer-events: auto
+
+
+.logo__icon 
+  background: url(/rs/static/images/header/rs-logo-header.png) left center no-repeat
+  background-size: ($baseline * 4) ($baseline * 4)
+
+
+.logo__icon::after 
+  color: #BCBCBC
+
+
+@media (max-width: 423px) 
+  .logo 
+    width: $baseline * 31
+  
+
+  .logo__icon::after 
+    content: 'Rwanda Soft'
+  
+
+@media (max-width: 423px) 
+  .logo 
+    width: $baseline * 31
+  
+
+  .logo__icon::after 
+    content: 'Rwanda Soft'
+  
+
+
+@media (min-width: 424px) 
+  .logo__icon 
+    background-size: ($baseline * 6) ($baseline * 6)
+  
+
+
+@media (min-width: 672px) 
+  .logo 
+    width: $baseline * 31
+  
+
+  .logo__icon::after 
+    content: 'Rwanda Soft'
+  
+
+
+@media (min-width: 864px) 
+  .header__content 
+    background: none
+  
+

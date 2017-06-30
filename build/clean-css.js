@@ -8,7 +8,8 @@
 const fs = require('fs');
 const CleanCSS = require('clean-css');
 const files = [
-  'static/styles/main.css'
+  'static/styles/inline.css',
+  'static/styles/main.css',
 ];
 const opts = {
   keepSpecialComments: 1

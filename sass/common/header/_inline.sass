@@ -1,0 +1,245 @@
+.header
+  position: relative
+  height: $baseline * 8
+  font-family: 'Roboto', Arial, Helvetica, sans-serif
+  margin-bottom: $baseline * -3
+  background: #333
+
+  &::before 
+    width: 100%
+    position: absolute
+    height: $baseline * 6
+    content: ''
+    background: transparent
+    top: 0
+    left: 0
+
+.header__content 
+  height: 100%
+  display: flex
+  max-width: $baseline * 108
+  margin: 0 auto
+  position: relative
+  padding-bottom: $baseline * 1.5
+
+.logo 
+  display: flex
+  align-items: center
+  position: relative
+  padding: $baseline
+  flex: 0 0 auto
+  width: $baseline * 10
+
+
+.logo__icon 
+  display: flex
+  width: 100%
+  padding-left: $baseline * 6
+  height: $baseline * 4
+  overflow: hidden
+  margin-right: $baseline * 2
+  align-items: center
+  text-decoration: none
+
+.menu__nav 
+  list-style: none
+  padding: $baseline * 5 0 0 0
+  margin: 0
+  display: none
+  height: 100%
+  background: 404040
+  width: 90%
+  top: 0
+  right: 0
+  position: absolute
+  z-index: 0
+
+
+.menu__nav-item-container 
+  list-style: none
+  padding: 0
+  margin: 0
+
+
+.menu__nav a 
+  font-size: 16px
+  color: #BCBCBC
+  width: 100%
+  display: block
+  padding: $baseline
+  text-decoration: none
+
+
+.menu__nav a:hover,
+.menu__nav a:focus 
+  color: #6387F5
+  background: #F0F0F0
+
+.menu__nav-item--active a 
+  color: #6387F5
+  font-weight: 700
+
+
+.animatable .menu--enhanced 
+  overflow: hidden
+
+  .menu__nav 
+    display: block
+    transform: translateX(100%)
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1)
+  
+
+  .menu__toggle:checked ~ .menu__nav 
+    transform: translateX(0)
+  
+
+
+.menu__underlay 
+  position: fixed
+  display: block
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  opacity: 0
+
+
+.menu__toggle 
+  opacity: 0
+  position: absolute
+  top: $baseline * 1.5
+  right: $baseline
+  z-index: 1
+
+
+.menu__toggle-label 
+  width: $baseline * 3
+  height: $baseline * 3
+  display: block
+  position: absolute
+  top: $baseline * 1.5
+  right: $baseline
+  z-index: 2
+
+
+.menu__toggle:focus ~ .menu__toggle-label 
+  box-shadow: 0 0 2px 2px rgba(30, 163, 98, 0.6)
+
+
+@media (max-width: 423px) 
+  .menu__toggle:checked ~ .menu__nav,
+  .menu--enhanced .menu__nav 
+    display: block
+    position: fixed
+    top: 0
+    right: 0
+    height: 100%
+    width: 90%
+  
+
+
+@media (min-width: 424px) 
+  .header 
+    height: $baseline * 11
+
+    &::before 
+      height: $baseline * 8
+    
+  
+
+  .menu 
+    display: flex
+    align-items: center
+    flex: 1
+    justify-content: flex-end
+  
+
+  .animatable .menu--enhanced .menu__nav 
+    transform: translateX(0)
+  
+
+  .menu__toggle,
+  .menu__toggle-label 
+    display: none
+  
+
+  .menu__underlay 
+    display: none
+  
+
+  .menu__nav 
+    display: block
+    position: relative
+    height: auto
+    width: auto
+    padding: 0
+  
+
+  .menu__nav-item 
+    display: inline
+    margin-right: $baseline * 2
+
+    &:last-of-type 
+      margin-right: $baseline
+    
+  
+
+  .menu__nav-item a 
+    font-size: 14px
+    padding: 0
+    display: inline
+
+    &:hover,
+    &:focus 
+      background: none
+    
+  
+
+  .logo__icon 
+    padding-left: 0
+    height: $baseline * 6
+  
+
+  .header__live-stream 
+    height: $baseline * 12
+
+    span 
+      padding-bottom: $baseline
+    
+  
+
+
+@media (min-width: 600px) 
+  .header 
+    height: $baseline * 12
+  
+
+  .header::before 
+    height: $baseline * 9
+  
+
+  .header__live-stream 
+    font-size: 20px
+
+    span:before 
+      width: 32px
+      height: 32px
+      background-size: 32px 32px
+    
+  
+
+  .menu 
+    height: $baseline * 10
+  
+
+  .menu__nav-item a 
+    font-size: 16px
+  
+
+  .menu__nav-item:last-of-type 
+    margin-right: $baseline * 2
+  
+
+  .logo__icon 
+    padding-left: $baseline * 8
+  

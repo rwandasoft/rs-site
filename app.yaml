@@ -1,6 +1,3 @@
-application: rwandasoft-official-site
-version: v20170629
-
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -22,8 +19,16 @@ handlers:
   upload: static/images/(.*)
   secure: always
 
-- url: /(.*)
+- url: /rs/(.*)
   script: main.app
+  secure: always
+
+- url: /rs
+  script: redirector.app
+  secure: always
+
+- url: /
+  script: redirector.app
   secure: always
 
 

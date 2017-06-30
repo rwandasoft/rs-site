@@ -1,0 +1,34 @@
+
+{% macro head(is_partial=none, styles_path=none, inline_styles=False, base_url, url) %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#6387F5">
+
+    <link rel="manifest" href="static/manifest.json">
+    <link rel="icon" href="/rs/static/images/icons/rs-icon@192.png">
+    <link rel="preload" href="{{ 'static/scripts/main.js' | add_hash }}" as="script">
+
+       {% if inline_styles %}
+    <style>
+      {% include "static/styles/inline.css" %}
+    </style>
+    <noscript>
+
+      <link rel="stylesheet" href="{{ "static/styles/main.css" | add_hash }}">
+    </noscript>
+    {% else %}
+      <link rel="stylesheet" href="{{ "static/styles/main.css" | add_hash }}">
+    {% endif %}
+
+    <title>RWANDASOFT Ltd</title>
+  </head>
+  <body>
+
+    {% include "templates/includes/header.partial.html" %}
+    {{ caller() }}
+  
+{% endmacro %}
